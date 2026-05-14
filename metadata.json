@@ -1,0 +1,7 @@
+{
+  "name": "Noktek Social Economy Platform",
+  "description": "A high-scale social economy, creator monetization, and marketplace platform with integrated tokenomics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Standard user profile including roles and referral data.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "role": { "type": "string", "enum": ["guest", "user", "influencer", "advertiser", "seller", "admin"] },
+        "interests": { "type": "array" },
+        "referralCode": { "type": "string" },
+        "points": { "type": "number" },
+        "status": { "type": "string" }
+      },
+      "required": ["uid", "role"]
+    },
+    "Wallet": {
+      "title": "Wallet",
+      "description": "User wallets for withdrawals and investments.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "withdrawBalance": { "type": "number" },
+        "investmentBalance": { "type": "number" }
+      },
+      "required": ["userId"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "User",
+      "description": "User profile data."
+    },
+    "users/{userId}/wallets/{walletId}": {
+      "schema": "Wallet",
+      "description": "User financial record."
+    }
+  }
+}
